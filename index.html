@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Undangan Pernikahan Isa & Dea</title>
-    <meta name="description" content="Undangan digital pernikahan Isa & Dea pada 27 September 2026 di Hotel Aryaduta Palembang" />
+    <title>Undangan Pernikahan Ipan & Dea</title>
+    <meta name="description" content="Undangan digital pernikahan Ipan & Dea pada 27 September 2026 di Hotel Aryaduta Palembang" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,13 +15,10 @@
   </head>
   <body>
     <main class="page-shell">
-      <audio id="bgMusic" loop>
-        <source src="cant_help_falling_in_love.mp3.mp4" type="audio/mpeg" />
-      </audio>
       <section class="hero-card">
         <div class="hero-copy">
           <p class="eyebrow">Undangan Pernikahan</p>
-          <h1>Isa & Dea</h1>
+          <h1>Ipan & Dea</h1>
           <p class="hero-subtitle">Kami mengundang Anda untuk hadir dan memberi restu pada hari bahagia kami.</p>
 
           <div class="date-badge">
@@ -41,7 +38,7 @@
         </div>
 
         <div class="hero-media">
-          <img class="hero-photo" src="Latar Belakang.jpeg" alt="Isa dan Dea" />
+          <img class="hero-photo" src="Latar Belakang.jpeg" alt="Ipan dan Dea" />
         </div>
       </section>
 
@@ -74,20 +71,23 @@
         </div>
       </section>
 
-      <section class="rsvp-card">
-        <h2>Konfirmasi Kehadiran</h2>
+      <section class="music-card">
+        <audio id="bgMusic" controls autoplay loop preload="auto" playsinline>
+          <source src="cant_help_falling_in_love.m4a" type="audio/mp4" />
+          <p>Your browser does not support embedded audio.</p>
+        </audio>
       </section>
 
       <section class="qr-card">
-        <h2>Link & QR Undangan</h2>
-        <p class="qr-link">
-          <a href="https://example.com/isa-dea-undangan" target="_blank" rel="noreferrer">https://example.com/isa-dea-undangan</a>
-        </p>
+        <h2>QR Code Undangan</h2>
         <div class="qr-box">
-          <img src="https://api.qrserver.com/v1/create-qr-code/?size=260x260&data=https://example.com/isa-dea-undangan" alt="QR Code Undangan" />
+          <img id="qrImage" src="https://chart.googleapis.com/chart?chs=260x260&cht=qr&chl=https://mdimastrydaffa.github.io/undangan-ipan-dea/&choe=UTF-8" alt="QR Code Undangan" />
         </div>
-        <p class="qr-note">Scan QR di atas untuk membuka undangan di publik.</p>
-        <p class="qr-warning">Untuk benar-benar dapat diakses publik, upload file ini ke hosting dan ganti URL dengan alamat publik Anda.</p>
+        <p class="qr-note">Buka undangan publik: <a href="https://mdimastrydaffa.github.io/undangan-ipan-dea/">https://mdimastrydaffa.github.io/undangan-ipan-dea/</a></p>
+      </section>
+
+      <section class="rsvp-card">
+        <h2>Konfirmasi Kehadiran</h2>
       </section>
     </main>
 
