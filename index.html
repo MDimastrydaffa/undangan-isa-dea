@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Undangan Pernikahan Isa & Dea</title>
+    <meta name="description" content="Undangan digital pernikahan Isa & Dea pada 27 September 2026 di Hotel Aryaduta Palembang" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <audio id="bgMusic" loop>
+        <source src="cant_help_falling_in_love.mp3.mp4" type="audio/mpeg" />
+      </audio>
+      <section class="hero-card">
+        <div class="hero-copy">
+          <p class="eyebrow">Undangan Pernikahan</p>
+          <h1>Isa & Dea</h1>
+          <p class="hero-subtitle">Kami mengundang Anda untuk hadir dan memberi restu pada hari bahagia kami.</p>
+
+          <div class="date-badge">
+            <span>27</span>
+            <div>
+              <strong>September 2026</strong>
+              <p>Hotel Aryaduta Palembang</p>
+            </div>
+          </div>
+
+          <div class="countdown" id="countdown">
+            <div><strong id="days">00</strong><span>Hari</span></div>
+            <div><strong id="hours">00</strong><span>Jam</span></div>
+            <div><strong id="minutes">00</strong><span>Menit</span></div>
+            <div><strong id="seconds">00</strong><span>Detik</span></div>
+          </div>
+        </div>
+
+        <div class="hero-media">
+          <img class="hero-photo" src="Latar Belakang.jpeg" alt="Isa dan Dea" />
+        </div>
+      </section>
+
+      <section class="info-card">
+        <h2>Detail Acara</h2>
+        <div class="detail-grid">
+          <div>
+            <h3>Akad Nikah</h3>
+            <p>09.00 WIB</p>
+          </div>
+          <div>
+            <h3>Resepsi</h3>
+            <p>11.00 WIB s.d. Selesai</p>
+          </div>
+          <div>
+            <h3>Lokasi</h3>
+            <p>Hotel Aryaduta Palembang</p>
+          </div>
+          <div>
+            <h3>Dress Code</h3>
+            <p>Batik / Formal Chic</p>
+          </div>
+        </div>
+
+        <div class="message-box">
+          <p>
+            Kami berharap kehadiran Anda menjadi bagian dari kebahagiaan kami.
+            Semoga doa dan restu menyertai langkah kami menuju keluarga yang sakinah, mawadah, dan warahmah.
+          </p>
+        </div>
+      </section>
+
+      <section class="rsvp-card">
+        <h2>Konfirmasi Kehadiran</h2>
+      </section>
+
+      <section class="qr-card">
+        <h2>Link & QR Undangan</h2>
+        <p class="qr-link">
+          <a href="https://example.com/isa-dea-undangan" target="_blank" rel="noreferrer">https://example.com/isa-dea-undangan</a>
+        </p>
+        <div class="qr-box">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=260x260&data=https://example.com/isa-dea-undangan" alt="QR Code Undangan" />
+        </div>
+        <p class="qr-note">Scan QR di atas untuk membuka undangan di publik.</p>
+        <p class="qr-warning">Untuk benar-benar dapat diakses publik, upload file ini ke hosting dan ganti URL dengan alamat publik Anda.</p>
+      </section>
+    </main>
+
+    <script>
+      const targetDate = new Date('2026-09-27T00:00:00').getTime();
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        if (distance < 0) {
+          document.getElementById('countdown').innerHTML = '<div><strong>00</strong><span>Hari</span></div><div><strong>00</strong><span>Jam</span></div><div><strong>00</strong><span>Menit</span></div><div><strong>00</strong><span>Detik</span></div>';
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById('days').textContent = String(days).padStart(2, '0');
+        document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+        document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+      }
+
+      function renderQRCode() {
+        const qrBox = document.getElementById('qrBox');
+        if (!qrBox) return;
+        qrBox.innerHTML = '';
+        new QRCode(qrBox, {
+          text: 'file:///d:/Undangan%202/index.html',
+          width: 260,
+          height: 260,
+          colorDark: '#111111',
+          colorLight: '#ffffff',
+          correctLevel: QRCode.CorrectLevel.H,
+        });
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+      renderQRCode();
+
+      window.addEventListener('load', () => {
+        const bgMusic = document.getElementById('bgMusic');
+        if (bgMusic) {
+          bgMusic.play().catch(() => {
+            window.addEventListener('click', () => {
+              bgMusic.play().catch(() => {});
+            }, { once: true });
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
